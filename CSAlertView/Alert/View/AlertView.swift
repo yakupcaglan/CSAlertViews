@@ -7,14 +7,23 @@
 
 import UIKit
 
-protocol AlertViewDelegate: class {
-    func didTapButton()
+@objc protocol AlertViewDelegate: class {
+    func didTapActionButton()
+    @objc optional func didTapDissmisbutton()
 }
 
 final class AlertView: BaseView {
     
     // MARK:- Properties
     weak var delegate: AlertViewDelegate?
+    
+    var title: String? {
+        get {
+            actionButton.titleLabel?.text
+        } set {
+            actionButton.setTitle(newValue, for: .normal)
+        }
+    }
     
     private lazy var alertViewContainer: UIView = {
         let view = UIView()
@@ -30,6 +39,10 @@ final class AlertView: BaseView {
         return view
     }()
     
+    private lazy var circleImageView: CircleImageView = {
+        return CircleImageView()
+    }()
+    
     private lazy var alertTextLabel: UILabel = {
         let label = UILabel()
         label.text = "This alerview text. It give to you info for status"
@@ -39,7 +52,7 @@ final class AlertView: BaseView {
 
     private lazy var dismissButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("cancel", for: .normal)
+        button.setTitle(title, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .systemOrange
         button.layer.cornerRadius = 16
@@ -69,14 +82,21 @@ final class AlertView: BaseView {
     
     // MARK:- Life cyle
     override func linkInteractor() {
-        dismissButton.addTarget(self, action: #selector(dismisAlertAction), for: .touchUpInside)
+        dismissButton.addTarget(self,
+                                action: #selector(dismissButtonAction),
+                                for: .touchUpInside)
+        actionButton.addTarget(self,
+                               action: #selector(actionButtonAciton),
+                               for: .touchUpInside)
     }
     
     override func prepareLayout() {
         setupalArtViewContainerLayout()
         setupAlertViewLayout()
+        setupCircleImageViewLayout()
         setupButtonsLayout()
         setupAlertTextLabelLayout()
+        
     }
     
     private func setupalArtViewContainerLayout() {
@@ -92,6 +112,15 @@ final class AlertView: BaseView {
             make.centerX.centerY.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.7)
             make.height.equalTo(alertView.snp.width).multipliedBy(0.7)
+        }
+    }
+    
+    private func setupCircleImageViewLayout() {
+        alertView.addSubview(circleImageView)
+        circleImageView.snp.makeConstraints { (make) in
+            make.top.equalTo(alertView.snp.top).offset(-30)
+            make.height.width.equalTo(60)
+            make.centerX.equalToSuperview()
         }
     }
     
@@ -115,7 +144,10 @@ final class AlertView: BaseView {
 
 // Ex:- AlerView
 extension AlertView {
-    @objc func dismisAlertAction() {
-        delegate?.didTapButton()
+    @objc func dismissButtonAction() {
+        delegate?.didTapDissmisbutton?()
+    }
+    @objc func actionButtonAciton() {
+        delegate?.didTapActionButton()
     }
 }

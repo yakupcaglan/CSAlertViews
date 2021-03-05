@@ -8,17 +8,17 @@
 import UIKit
 
 class TestViewViewController: BaseViewController<TestView> {
-    
-    private lazy var myAlert = AlertViewController()
 
+    // MARK:- Life cyle
     override func linkInteractor() {
         baseView.delegate = self
     }
     
+    // MARK:- Methods
     private func showAlert() {
-        myAlert.modalPresentationStyle = .overCurrentContext
-        myAlert.modalTransitionStyle = .crossDissolve
-        self.present(myAlert, animated: true, completion: nil)
+        let myAlert = AlertViewController(actionButtonTitle: "Okey")
+        myAlert.delegate = self
+        presentViewController(myAlert)
     }
 }
 
@@ -26,6 +26,13 @@ class TestViewViewController: BaseViewController<TestView> {
 extension TestViewViewController: TestViewDelegate {
     func didTapShowAlertButton() {
         showAlert()
+    }
+}
+
+// MARK:- AlertViewControllerDelegate
+extension TestViewViewController: AlertViewControllerDelegate {
+    func didTapActionButton() {
+        
     }
 }
 

@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0412B0A325F2EABC00CB121C /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412B0A225F2EABC00CB121C /* CircleImageView.swift */; };
 		046E46C925F0200D00CA4346 /* Layoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E46C825F0200D00CA4346 /* Layoutable.swift */; };
 		046E46CC25F0202000CA4346 /* Layouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E46CB25F0201F00CA4346 /* Layouting.swift */; };
 		046E46CF25F025D600CA4346 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E46CE25F025D600CA4346 /* BaseViewController.swift */; };
+		048BB8CF25F1A752009A1FB4 /* Navigate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BB8CE25F1A752009A1FB4 /* Navigate+Extension.swift */; };
 		04E5A69E25EC57E60086CA10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E5A69D25EC57E60086CA10 /* AppDelegate.swift */; };
 		04E5A6A225EC57E60086CA10 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E5A6A125EC57E60086CA10 /* TestViewController.swift */; };
 		04E5A6A725EC57E90086CA10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E5A6A625EC57E90086CA10 /* Assets.xcassets */; };
@@ -22,9 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0412B0A225F2EABC00CB121C /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		046E46C825F0200D00CA4346 /* Layoutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layoutable.swift; sourceTree = "<group>"; };
 		046E46CB25F0201F00CA4346 /* Layouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layouting.swift; sourceTree = "<group>"; };
 		046E46CE25F025D600CA4346 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		048BB8CE25F1A752009A1FB4 /* Navigate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigate+Extension.swift"; sourceTree = "<group>"; };
 		04E5A69A25EC57E60086CA10 /* CSAlertView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSAlertView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E5A69D25EC57E60086CA10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04E5A6A125EC57E60086CA10 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +64,14 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		048BB8CD25F1A727009A1FB4 /* Utitls */ = {
+			isa = PBXGroup;
+			children = (
+				048BB8CE25F1A752009A1FB4 /* Navigate+Extension.swift */,
+			);
+			path = Utitls;
+			sourceTree = "<group>";
+		};
 		04E5A69125EC57E50086CA10 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +96,7 @@
 				04FD8C8625F02FD000BD5C20 /* TestView.swift */,
 				04E5A6B625EC58930086CA10 /* Alert */,
 				046E46C525F01FFB00CA4346 /* Base */,
+				048BB8CD25F1A727009A1FB4 /* Utitls */,
 				04E5A6A625EC57E90086CA10 /* Assets.xcassets */,
 				04E5A6A825EC57E90086CA10 /* LaunchScreen.storyboard */,
 				04E5A6AB25EC57E90086CA10 /* Info.plist */,
@@ -104,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				04FD8C7825F0275E00BD5C20 /* AlertView.swift */,
+				0412B0A225F2EABC00CB121C /* CircleImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,9 +208,11 @@
 				046E46CC25F0202000CA4346 /* Layouting.swift in Sources */,
 				04E5A6A225EC57E60086CA10 /* TestViewController.swift in Sources */,
 				04E5A69E25EC57E60086CA10 /* AppDelegate.swift in Sources */,
+				0412B0A325F2EABC00CB121C /* CircleImageView.swift in Sources */,
 				046E46C925F0200D00CA4346 /* Layoutable.swift in Sources */,
 				04FD8C7925F0275E00BD5C20 /* AlertView.swift in Sources */,
 				04FD8C7C25F0277E00BD5C20 /* BaseView.swift in Sources */,
+				048BB8CF25F1A752009A1FB4 /* Navigate+Extension.swift in Sources */,
 				04FD8C8725F02FD000BD5C20 /* TestView.swift in Sources */,
 				046E46CF25F025D600CA4346 /* BaseViewController.swift in Sources */,
 				04E5A6B825EC58B40086CA10 /* AlertViewController.swift in Sources */,

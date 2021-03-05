@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseViewController<T: LayoutableView>: LayoutableViewController  {
+class BaseViewController<T: LayoutableView>: LayoutableViewController, Navigate {
     
     // MARK:- Properties
     typealias ViewType = T
@@ -29,5 +29,5 @@ class BaseViewController<T: LayoutableView>: LayoutableViewController  {
     func linkInteractor() {}
     func configureAppearance() {}
     func prepareLayout() {}
-
 }
+
